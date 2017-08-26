@@ -1,15 +1,20 @@
 import React from 'react'
-import { render } from 'react-dom'
-import {hello, goodbye} from './lib'
-import Clock from './lib'
-import SkiDayCount from './components/SkiDayCount'
+import {render} from 'react-dom'
+//import {hello, goodbye} from './lib'
+//import Clock from './lib'
+import { SkiDayCount } from './components/SkiDayCount'
+import App from './components/App'
 
 window.React = React
 
 render(
-	<SkiDayCount total={50} powder={20} backcountry={5} goal={100}/>,
-    document.getElementById('react-container')
+    <App />, document.getElementById('react-container')
 )
+
+// render(
+// 	<SkiDayCount backcountry={false}/>,
+//     document.getElementById('react-container')
+// )
 
 // render(
 // 	<div>{hello}{goodbye}</div>,
