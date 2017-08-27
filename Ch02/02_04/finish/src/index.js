@@ -1,28 +1,24 @@
 import React from 'react'
 import {render} from 'react-dom'
-//import {hello, goodbye} from './lib'
-//import Clock from './lib'
-import { SkiDayCount } from './components/SkiDayCount'
-import App from './components/App'
+import './stylesheets/ui.scss'
+import { App} from './components/App'
+import { Whoops404} from './components/Whoops404'
+import { Router, Route } from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory'
 
-window.React = React
+const history = createBrowserHistory()
+
+window.React = React;
 
 render(
-    <App />, document.getElementById('react-container')
-)
+    <Router history={history}>
+        <div>
+            <Route path="/" component={App} />
+            {/*<Route path="/list-days" component={App} />*/}
+            {/*<Route path="/add-day" component={App} />*/}
+            <Route path="/test" component={Whoops404} />
+        </div>
+    </Router>
+    , document.getElementById('react-container')
+);
 
-// render(
-// 	<SkiDayCount backcountry={false}/>,
-//     document.getElementById('react-container')
-// )
-
-// render(
-// 	<div>{hello}{goodbye}</div>,
-//     document.getElementById('react-container')
-// )
-//
-
-// render(
-// 	<Clock />,
-//     document.getElementById('clock-container')
-// )
